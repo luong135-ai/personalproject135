@@ -1,0 +1,464 @@
+/* =========================
+   AVOID THE FINALS STRESS - UMD EDITION
+   Game Styles - Modern Flat Design
+   ========================= */
+
+:root {
+  --primary: #BA1010;
+  --secondary: #FFE100;
+  --accent-1: #FFC917;
+  --accent-2: #EBA625;
+  --danger: #F00000;
+  --white: #FFFFFF;
+  --light-gray: #F5F5F5;
+  --dark-gray: #2C2C2C;
+}
+
+/* ==================
+   GAME SECTION
+   ================== */
+.game-section {
+  padding: 60px 0;
+  background: var(--white);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.game-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.game-header h1 {
+  font-size: 2.5rem;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.game-header p {
+  font-size: 1.1rem;
+  color: var(--dark-gray);
+  opacity: 0.8;
+}
+
+/* ==================
+   GAME WRAPPER
+   ================== */
+.game-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  padding: 20px;
+  background: var(--light-gray);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.game-board {
+  position: relative;
+  width: 500px;
+  max-width: 500px;
+  aspect-ratio: 1 / 1.2;
+   margin: 0 auto;
+  background: var(--white);
+  border: 3px solid var(--primary);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.character {
+  position: absolute;
+  bottom: 10px;     /* chỉnh cao-thấp cả cụm ở đây */
+  left: 0;          /* để JS điều khiển hoàn toàn, không auto 50% nữa */
+  transform: none;  /* bỏ translateX(-50%) */
+  width: 60px;
+  height: 70px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 50;
+}
+
+/* Cái ván vẫn canh giữa theo nhân vật */
+.character::before {
+  content: '';
+  position: absolute;
+  bottom: -4px;      /* hoặc -6 nếu muốn ván hơi thấp hơn */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 12px;
+  background: linear-gradient(90deg, var(--secondary) 0%, var(--accent-1) 100%);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Wheels on the board */
+.character::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 10%;
+  width: 8px;
+  height: 8px;
+  background: var(--dark-gray);
+  border-radius: 50%;
+  box-shadow: 60px 0 0 var(--dark-gray);
+  transform: translateX(-10px);
+}
+
+/* Falling Objects */
+.falling-object {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 8px;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==================
+   GAME INFO PANEL
+   ================== */
+.game-info {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--accent-1) 100%);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+  color: var(--dark-gray);
+}
+
+.info-item .label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.info-item .value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* Distance meter */
+#distance {
+  color: var(--danger);
+}
+
+/* ==================
+   GAME OVERLAY
+   ================== */
+.game-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  padding: 20px;
+  background: var(--light-gray);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  position: relative;             /* thêm dòng này để overlay bám theo */
+}
+
+.game-overlay {
+  position: absolute;
+  inset: 0;                       /* top:0; right:0; bottom:0; left:0 trong game-wrapper */
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  backdrop-filter: blur(2px);
+}
+
+.game-overlay.hidden {
+  display: none;
+}
+
+.overlay-content {
+  background: var(--white);
+  padding: 40px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  animation: slideInUp 0.4s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.overlay-content h2 {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.overlay-content p {
+  font-size: 1.1rem;
+  color: var(--dark-gray);
+  margin-bottom: 28px;
+  opacity: 0.8;
+}
+
+/* Buttons */
+.btn-primary {
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--danger) 100%);
+  color: var(--white);
+  box-shadow: 0 6px 16px rgba(186, 16, 16, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(186, 16, 16, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(186, 16, 16, 0.3);
+}
+
+.btn-primary.hidden {
+  display: none;
+}
+
+/* ==================
+   INSTRUCTIONS SECTION
+   ================== */
+.game-instructions {
+  padding: 60px 0;
+  background: var(--light-gray);
+}
+
+.game-instructions h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.instructions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.instruction-card {
+  background: var(--white);
+  padding: 28px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 4px solid var(--secondary);
+}
+
+.instruction-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.instruction-card h3 {
+  font-size: 1.3rem;
+  color: var(--primary);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.instruction-card p {
+  font-size: 0.95rem;
+  color: var(--dark-gray);
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.instruction-card strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ==================
+   RESPONSIVE DESIGN
+   ================== */
+@media (max-width: 768px) {
+  .game-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .game-header p {
+    font-size: 1rem;
+  }
+
+  .game-wrapper {
+    padding: 16px;
+  }
+
+  .game-board {
+    aspect-ratio: 1 / 1.3;
+  }
+
+  .game-info {
+    gap: 16px;
+  }
+
+  .info-item {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+
+  .info-item .value {
+    font-size: 1.3rem;
+  }
+
+  .overlay-content {
+    margin: 20px;
+    padding: 32px 24px;
+  }
+
+  .overlay-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .overlay-content p {
+    font-size: 1rem;
+  }
+
+  .game-instructions h2 {
+    font-size: 1.6rem;
+  }
+
+  .instructions-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .instruction-card {
+    padding: 20px;
+  }
+
+  .instruction-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .instruction-card p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-section {
+    padding: 40px 0;
+  }
+
+  .game-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .game-header p {
+    font-size: 0.95rem;
+  }
+
+  .game-wrapper {
+    padding: 12px;
+  }
+
+  .game-info {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .info-item {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 16px;
+  }
+
+  .character {
+    width: 50px;
+    height: 60px;
+  }
+
+  .falling-object {
+    width: 45px;
+    height: 45px;
+    font-size: 1.8rem;
+  }
+}
+
+/* ==================
+   ANIMATIONS
+   ================== */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  25% {
+    transform: translateX(-50%) translateY(-4px);
+  }
+  75% {
+    transform: translateX(-50%) translateY(2px);
+  }
+}
+
+@keyframes fall {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+/* Victory state */
+.victory {
+  animation: bounce 0.6s ease-in-out;
+}
+
+/* Impact/collision effect */
+@keyframes impact {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}

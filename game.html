@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Avoid the Finals Stress - UMD Edition. A fun game to test your reflexes during finals week!">
+    <title>Avoid the Finals Stress - UMD Edition | Nancy Luong</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="avoid-game.css">
+</head>
+<body>
+    <a href="#main" class="skip-to-content">Skip to content</a>
+    
+    <header class="site-header">
+        <div class="container header-content">
+            <div class="header-left">
+                <a href="index.html" class="logo-link">
+                    <img src="logo.png" alt="Nancy" class="logo-image">
+                    <span class="site-title">NANCY</span>
+                </a>
+            </div>
+            
+            <nav aria-label="Main" class="header-center">
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 6h18M3 12h18M3 18h18"/>
+                    </svg>
+                </button>
+                <ul class="nav-menu" data-nav-menu>
+                    <li><a href="index.html" class="nav-link">HOME</a></li>
+                    <li><a href="hobbies.html" class="nav-link">HOBBIES</a></li>
+                    <li><a href="discover.html" class="nav-link">DISCOVER</a></li>
+                    <li><a href="resume.html" class="nav-link">RESUME</a></li>
+                    <li><a href="career.html" class="nav-link">CAREER</a></li>
+                    <li><a href="game.html" class="nav-link active">GAME</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-right">
+                <a href="#contact" class="btn btn-accent">LET'S CHAT</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="game-section">
+            <div class="container">
+                <div class="game-header">
+                    <h1>STAY AWAY FROM STRESS</h1>
+                    <p>Help your bulldog through a storm of stress in 44 seconds!</p>
+                    <p>So he and you can pass the next exam together!</p>
+                </div>
+
+                <div class="game-wrapper">
+                    <div id="gameBoard" class="game-board">
+                        <!-- Game will be rendered here -->
+                    </div>
+
+                    <!-- overlay PHẢI nằm trong game-wrapper -->
+                    <div id="gameOverlay" class="game-overlay hidden">
+                        <div class="overlay-content">
+                            <h2 id="overlayTitle">Get Ready!</h2>
+                            <p id="overlayMessage">Use ← → to move</p>
+                            <button id="startBtn" class="btn-primary">Start Game</button>
+                            <button id="restartBtn" class="btn-primary hidden">Play Again</button>
+                        </div>
+                    </div>
+                </div> <!-- <- giờ mới đóng game-wrapper -->
+
+                <div class="game-info">
+                    <div class="info-item">
+                        <span class="label">Time Left:</span>
+                        <span id="timer" class="value">44</span>s
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Score:</span>
+                        <span id="score" class="value">0</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Status:</span>
+                        <span id="status" class="value" style="color: #FFE100;">Survive</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="game-instructions">
+            <div class="container">
+                <h2>How to Play</h2>
+                <div class="instructions-grid">
+                    <div class="instruction-card">
+                        <h3>Controls</h3>
+                        <p>Use the <strong>← →</strong> arrow keys to move your bulldog left and right.</p>
+                    </div>
+                    <div class="instruction-card">
+                        <h3>Survival Challenge</h3>
+                        <p>Survive for <strong>44 seconds</strong> to become a CHAMPION! 🏆</p>
+                    </div>
+                    <div class="instruction-card">
+                        <h3>Progressive Difficulty</h3>
+                        <p>Objects fall slowly at first (0-5s), then gradually speed up. By 40s, it's intense!</p>
+                    </div>
+                    <div class="instruction-card">
+                        <h3>Scoring System</h3>
+                        <p>Earn <strong>10 points</strong> for each stress icon you avoid. Beat your high score!</p>
+                    </div>
+                    <div class="instruction-card">
+                        <h3>Stress Icons</h3>
+                        <p>Dodge exams 📚, coffee ☕, pencils ✏️, teachers 👨‍🏫, deadlines ⏰, and more!</p>
+                    </div>
+                    <div class="instruction-card">
+                        <h3>Victory Animation</h3>
+                        <p>Survive 44 seconds to see the glowing "CHAMPION" victory animation!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Nancy Luong. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="avoid-game.js"></script>
+</body>
+</html>
