@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies & STEM - Nancy Luong</title>
+  <link rel="stylesheet" href="styles.css">
+    <style>
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 0;
+        }
+        
+        .hobby-card {
+            background: var(--gray-100);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .hobby-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .hobby-content {
+            padding: 1.5rem;
+        }
+        
+        .hobby-title {
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+        
+        .hobby-takeaway {
+            margin-top: 1rem;
+            font-style: italic;
+            color: var(--navy-800);
+        }
+        
+        .have-fun-section {
+            text-align: center;
+            padding: 3rem 0;
+            margin: 2rem 0;
+        }
+        
+        .have-fun-text {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: var(--navy);
+            margin: 0;
+            letter-spacing: 0.1em;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-to-content">Skip to content</a>
+    
+   <header class="site-header">
+  <div class="container header-content">
+    <div class="header-left">
+      <a href="index.html" class="logo-link">
+  <img src="logo.png" alt="Nancy" class="logo-image">
+        <span class="site-title">NANCY</span>
+      </a>
+    </div>
+
+    <nav aria-label="Main" class="header-center">
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 6h18M3 12h18M3 18h18"/>
+        </svg>
+      </button>
+      <ul class="nav-menu" data-nav-menu>
+        <li><a href="index.html" class="nav-link">HOME</a></li>
+        <li><a href="hobbies.html" class="nav-link active">HOBBIES</a></li>
+        <li><a href="discover.html" class="nav-link">DISCOVER</a></li>
+        <li><a href="resume.html" class="nav-link">RESUME</a></li>
+        <li><a href="career.html" class="nav-link">CAREER</a></li>
+        <li><a href="game.html" class="nav-link">GAME</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-right">
+      <a href="#contact" class="btn btn-accent">LET'S CHAT</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+    <section class="hero" id="home">
+        <div class="hero-background" aria-hidden="true">
+          <img src="hobby.png" alt="" role="presentation" />
+        </div>
+      
+        <div class="hero__content">
+          <!-- Intro nhỏ, uppercase + có thể kẻ gạch vàng bằng ::before -->
+          <p class="hero__intro">NANCY LUONG</p>
+      
+          <!-- Highlight to, xuống dòng giống mockup -->
+          <h1 class="hero__title">
+            My Hobbies & Achievements
+          </h1>
+      
+          <!-- Body text gọn gàng -->
+          <p class="hero__desc">
+            "Hobbies are great distractions from the worries and troubles that plague daily living."
+          </p>
+      
+          <!-- Buttons: primary (solid) + ghost (outline) -->
+          <div class="hero__actions">
+            <a
+              href="#contact"
+              class="btn btn--ghost"
+              aria-label="Contact Nancy"
+            >
+              Contact Me
+            </a>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Centered "Have fun" text -->
+      <div class="have-fun-section">
+        <h2 class="have-fun-text">Have fun</h2>
+      </div>
+      
+        <div class="container">      
+          <section class="features">
+            <!-- 1: img right, text left -->
+            <article class="feature">
+              <div class="feature__media">
+                <img src="travel.webp" alt="Travel">
+              </div>
+              <div class="feature__body">
+                <h2 class="feature__title">Travel Adventures</h2>
+                <p class="feature__text">
+                  During my seven months of living and studying in the US, I turned every weekend into a memorable adventure, setting foot in six states and the vibrant city of Chicago (New York, Minnesota, Virginia, Maryland, Florida). These were more than just trips; they were a journey to immerse myself in the unique cultural diversity of America: from the hustle and bustle of New York, the raw natural beauty of Minnesota, to the warm, multi-ethnic atmosphere of Florida. These experiences have refined my skills in rapid adaptation, fostered an intense curiosity to learn, and significantly broadened my global perspective.
+                </p>
+              </div>
+            </article>
+      
+            <!-- 2: img left, text right (nth-child even) -->
+            <article class="feature">
+              <div class="feature__media">
+                <img src="recycling.webP" alt="Recycling">
+              </div>
+              <div class="feature__body">
+                <h2 class="feature__title">Environmental Clean-ups</h2>
+                <p class="feature__text">
+                  My commitment to environmental protection began early, taking root during my middle and high school years in Vietnam. From a young age, I recognized the profound importance of coexisting harmoniously with nature and understood that collective action is key to safeguarding our planet.
+
+I actively participated in initiatives to collect plastic waste, ensuring these materials had a chance at recycling rather than polluting our streets and natural landscapes. This hands-on experience deepened my understanding of waste management and resource recovery
+                </p>
+              </div>
+            </article>
+      
+            <!-- 3 -->
+            <article class="feature">
+              <div class="feature__media">
+                <img src="motor.webp" alt="Motorbike touring in Southern Vietnam" loading="lazy">
+              </div>
+              <div class="feature__body">
+                <h2 class="feature__title">Motorbike Adventures</h2>
+                <p class="feature__text">
+                  Vietnam's unique landscape is ideal for motorbike adventures. Every summer, I undertake extensive inter-provincial trips across Southern Vietnam. This passion has sharpened my skills in meticulous planning, rapid problem-solving, and resilience when navigating unexpected challenges. The more I explore, the more I mature, embracing the profound Vietnamese philosophy: "Đi để trở về" (Go to come back) journeying out to gain perspective and returning with deeper appreciation and renewed focus.
+                </p>
+              </div>
+            </article>
+      
+            <!-- 4 -->
+            <article class="feature">
+              <div class="feature__media">
+                <img src="compete.webp" alt="STEM Competition achievements" loading="lazy">
+              </div>
+              <div class="feature__body">
+                <h2 class="feature__title">First STEM Achievements</h2>
+                <p class="feature__text">
+                  During high school, I actively sought out STEM competitions to cultivate my analytical and creative thinking. This culminated in a First Place win for a magnetic vehicle project in Grade 11 as shown in this picture. Following this success, my team earned First and Second Place awards in various district and city-level contests, including projects for solar-powered cars, potential energy vehicles, and a major 'Smart Classroom' initiative (detailed below).
+
+Although I am currently majoring in Accounting due to strategic professional goals, my STEM background remains a vital foundation. These experiences directly sharpened my skills in logical analysis, complex problem-solving, and systemic thinking—transferable abilities that are crucial for mastering data, compliance, and procedural precision in the financial sector.
+                </p>
+              </div>
+            </article>
+
+            <!-- 5 -->
+            <article class="feature">
+                <div class="feature__media">
+                  <img src="stemcar.webp" alt="Magnetic vehicle project" loading="lazy">
+                </div>
+                <div class="feature__body">
+                  <h2 class="feature__title">Magnetic vehicle project</h2>
+                  <p class="feature__text">
+                    First Place win in Grade 11</p>
+                </div>
+              </article>
+
+              <!-- 6 -->
+            <article class="feature">
+                <div class="feature__media">
+                  <img src="result.webP" alt="Final project in my STEM journey" loading="lazy">
+                </div>
+                <div class="feature__body">
+                    <h2 class="feature__title">My final STEM project</h2>
+                  <p class="feature__text">
+                    The 'Smart Classroom' was my final, most memorable STEM project, marking my first exposure to Artificial Intelligence (AI) in 2022. This initiative aimed to fortify security and create a safer learning environment by integrating Internet of Things (IoT) and AI-powered facial recognition. The project was awarded Second Place at the City Level Competition.
+
+I had only two weeks to independently research and develop the AI modules, demonstrating strong skills in rapid self-learning, complex technical analysis, and time-sensitive execution. This achievement highlights my ability to manage technology-driven initiatives, collaborate effectively, and embrace innovative solutions. 
+                  </p>
+                </div>
+              </article>
+
+              <!-- 7 -->
+            <article class="feature">
+                <div class="feature__media">
+                  <img src="award.png" alt="Second Place in city-level contests" loading="lazy">
+                </div>
+                <div class="feature__body">
+                  <h2 class="feature__title">Second Place in city-level contests</h2>
+                  <p class="feature__text">
+                    This initiative aimed to fortify security and create a safer learning environment by integrating Internet of Things (IoT) and AI-powered facial recognition                  </p>
+                </div>
+              </article>
+
+             
+          </section>
+          <div class="have-fun-section">
+            <h2 class="have-fun-text">Thank you for reading all</h2>
+          </div>
+        </div>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Connect With Me</h2>
+                <p class="contact__subtitle">Have a question? Feel free to reach out!</p>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mobile">Mobile</label>
+                        <input type="tel" id="mobile" name="mobile" required placeholder="Enter your mobile number">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" placeholder="What would you like to ask?"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-accent submit-btn">Send Message</button>
+                </form>
+
+                <div class="social-links">
+                    <h3>Or connect with me on social media</h3>
+                    <ul class="contact__links">
+                        <li>
+                            <a href="https://www.linkedin.com/in/nancy-luong-075a69362/" class="contact__link" aria-label="LinkedIn Profile">
+                            <svg class="contact__icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/bich.thao.814271/" class="contact__link" aria-label="Facebook Profile">
+                            <svg class="contact__icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/nancyluonggg/" class="contact__link" aria-label="Instagram Profile">
+                            <svg class="contact__icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:luong135@d.umn.edu" class="contact__link" aria-label="Email">
+                            <svg class="contact__icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+      </main>
+    </div>
+      
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Nancy Luong. All rights reserved.</p>
+        </div>
+    </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
